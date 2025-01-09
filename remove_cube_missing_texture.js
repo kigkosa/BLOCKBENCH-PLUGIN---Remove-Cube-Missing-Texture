@@ -1,5 +1,5 @@
 (function () {
-  var flash_action;
+  let remove_cube;
   Plugin.register("remove_cube_missing_texture", {
     title: "Remove Cube Missing Texture",
     icon: "flash_on",
@@ -28,9 +28,10 @@
               Undo.finishEdit("Remove cube");
             }
           });
+		  Blockbench.showMessageBox({title: "Success",message: "Successfully delete."});
         },
       };
-      flash_action = new Action({
+      remove_cube = new Action({
         id: "remove_cube_missing_texture",
         name: "Remove Cube Missing Texture",
         category: "textures",
@@ -39,10 +40,10 @@
           mt_highlighter.start();
         },
       });
-      MenuBar.addAction(flash_action, "filter");
+      MenuBar.addAction(remove_cube, "filter");
     },
     onunload() {
-      flash_action.delete();
+      remove_cube.delete();
     },
   });
 })();
