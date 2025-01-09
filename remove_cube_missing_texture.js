@@ -18,7 +18,7 @@
           Cube.all.forEach((m, i) => {
             let del = false;
             for (let side in m.faces) {
-              if (m.faces[side].getTexture() == false) {
+              if (m.faces[side].getTexture() === false) {
                 del = true;
               }
             }
